@@ -1,6 +1,12 @@
+import os
+import sys
+from pathlib import Path
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.linear_model import LogisticRegression
+
+PACKAGE_ROOT = Path(os.path.abspath(os.path.dirname(__file__))).parent
+sys.path.append(str(PACKAGE_ROOT))
 
 from prediction_model.config import config
 import prediction_model.processing.preprocessing as pp

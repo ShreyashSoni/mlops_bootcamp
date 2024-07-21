@@ -1,6 +1,11 @@
 import os
+import sys
 import joblib
 import pandas as pd
+from pathlib import Path
+
+PACKAGE_ROOT = Path(os.path.abspath(os.path.dirname(__file__))).parent.parent
+sys.path.append(str(PACKAGE_ROOT))
 
 from prediction_model.config import config
 
@@ -19,7 +24,7 @@ def save_pipeline(pipeline_to_save):
 
 
 # Deserialization
-def load_pipeline(pipeline_to_load):
+def load_pipeline():
     pipeline_path = os.path.join(config.MODEL_SAVE_PATH, config.MODEL_NAME)
     model = joblib.load(pipeline_path)
     print("Model successfully loaded...")

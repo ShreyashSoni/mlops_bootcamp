@@ -1,0 +1,9 @@
+# Model building requirements
+joblib
+numpy
+pandas
+pytest
+scikit-learn
+scipy
+setuptools
+wheel
